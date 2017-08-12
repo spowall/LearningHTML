@@ -9,6 +9,16 @@
     color: red;
 }
 
+.error {
+    border-color:red;
+    border-width:1px;
+}
+
+.removeError {
+    border-color: silver;
+    border-width: 1px;
+}
+
 div{
     text-align: center;
 }

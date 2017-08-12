@@ -3,6 +3,52 @@
 <head>
     <title>My Website</title>
     <link rel="stylesheet" href="style.css"/>
+
+    <script type="text/javascript">
+        function toggleImage() {
+            if (document.getElementById('img1').src.includes( 'image.png')) {
+                document.getElementById('img1').src = 'images/image.gif'
+                //alert("1");
+            }
+            else {
+                document.getElementById('img1').src = 'images/image.png';
+                //alert(document.getElementById('img1').src );
+            }
+        }
+
+        function validateForm() {
+            var returnValue = true;
+
+            if (document.getElementById("firstname").value.length <= 0) {
+                //alert("First name is required");
+                document.getElementById("firstname").className = "error";
+                //document.getElementById("firstname").style.borderColor = "red"; 
+                returnValue = false;
+            }
+
+            var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+
+            if (document.getElementById("email").value.length <= 0) {
+                document.getElementById("email").className = "error";
+                returnValue = false;
+            }
+            else if (document.getElementById("email").value.match(pattern) == null) {
+                document.getElementById("email").className = "error";
+                returnValue = false;
+            } 
+
+            return returnValue;
+        }
+
+        function resetInput(obj) {
+            obj.style.borderColor = 'silver';
+        }
+
+        function sampleFunc() {
+            //put comment here
+        }
+
+    </script>
 </head>
 
 <body>
@@ -64,8 +110,17 @@
     </ul>
 
     <div>
-        <img src="images/image.gif" width="200" />
+        <img id="img1" onclick="toggleImage()" src="images/image.gif" width="200" />
     </div>
+
+        <div>
+            <form>
+                <p>Firstname*: <input type="text" id="firstname" onclick="resetInput(document.getElementById('firstname'))" /> </p>
+                <p>Lasstname: <input type="text" id="lastname" /> </p>
+                <p>Email*: <input type="text" id="email" onclick="resetInput(document.getElementById('email'))" /> </p>
+                <p> <input type="submit" id="submit" value="Enter" onclick="return validateForm()" /> </p>
+            </form>
+        </div>
 </body>
 
 </html>
