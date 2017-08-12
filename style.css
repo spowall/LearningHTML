@@ -1,0 +1,40 @@
+#main-heading{
+    text-align: center;
+    border: 2px dashed blue;
+    padding: 10px;
+    margin: 40px;
+}
+
+.red{
+    color: red;
+}
+
+div{
+    text-align: center;
+}
+
+p:first-of-type {
+    color:grey;
+    font-size:30px;
+}
+
+ul li:last-child{
+    color: green;
+}
+
+ol li{
+    display: inline-block;
+    padding: 10px;
+}
+
+ol li:hover{
+    background-color: grey;
+}
+
+ol li:hover a{
+    color: white;
+}
+
+ol li a{
+    text-decoration: none;
+}
